@@ -1,2 +1,3 @@
-web : gunicorn webapp.wsgi
-web : python manage.py migrate && gunicorn webapp.wsgi
+web: gunicorn blog.wsgi --log-file - 
+#or works good with external database
+web: python manage.py migrate && gunicorn blog.wsgi
